@@ -1,0 +1,238 @@
+:root {
+  --primary-bg: #e2ecfa;
+  --secondary-bg: #2162a8;
+  --accent: #c5d2d3;
+  --accent-dark: #000000;
+  --text-light: #111010;
+  --text-muted: #d1c4c4;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  background-color:rgb(150, 75, 201);
+  color:#000;
+  line-height: 1.6;
+  text-align: center;
+}
+.site {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.logo img {
+  height: 55px;
+}
+
+/* Navigation */
+.nav-list {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 5px 0;
+}
+
+/* Hover underline animation */
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+}
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("hero iamge.jpg")center cover no-repeat;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: var(--text-muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: black;
+  color:azure;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.4);
+}
+#about {
+  padding: 80px 12%;
+  background:rgb(124, 178, 231);
+  justify-content: center;
+  align-content: center;
+}
+
+#about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: var(--accent);
+}
+
+#about p {
+  max-width: 900px;
+  margin: 15px auto;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+#rides {
+  padding: 80px 10%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  background: var(--primary-bg);
+}
+
+.ride-item {
+  flex: 1;
+  background: var(--secondary-bg);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ride-item h3 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: var(--accent);
+}
+
+.ride-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 229, 255, 0.2);
+}
+footer {
+  background: #000;
+  padding: 40px 10%;
+  text-align: center;
+}
+
+footer p {
+  color: var(--text-muted);
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+/* Contact / Footer Section */
+footer {
+  background: linear-gradient(180deg, #000814, #000);
+  padding: 60px 10% 30px;
+}
+
+.footer-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-info h3 {
+  color: azure;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color:azure;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Social Media */
+.socialmedia-item {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.socialmedia-item a {
+  color:azure;
+  font-size: 1.4rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.socialmedia-item a:hover {
+  color:rgb(141, 207, 185)
+  transform: translateY(-5px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color:azure;
+}
+
+@media (max-width: 768px) {
+  .site {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  #rides {
+    flex-direction: column;
+  }
+}
